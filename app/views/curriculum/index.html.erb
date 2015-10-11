@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Usuarios</h1>
+<h1>Listando a los curriculums</h1>
 
 <table>
   <thead>
@@ -14,20 +14,11 @@
   </thead>
 
   <tbody>
-    <% @usuarios.each do |usuario| %>
-      <tr>
-        <td><%= usuario.nombre %></td>
-        <td><%= usuario.contrasena %></td>
-        <td><%= usuario.correo %></td>
-        <td><%= usuario.edad %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @curriculums.each do |curriculum| %>
+      
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Usuario', new_usuario_path %>
