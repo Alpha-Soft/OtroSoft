@@ -3,6 +3,18 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'principal/index'
 
+  get 'curriculum/index'
+
+  get 'curriculum/crear'
+  post'curriculum/crear' => "curriculum#crear"
+
+  post 'curriculum/borrar' => "curriculum#borrar"
+
+  get 'curriculum/actualizar'
+  post 'curriculum/actualizar' => "curriculum#actualizar"
+
+  get 'curriculum/read'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,70 @@
+<%= form_for(@curriculum) do |f| %>
+  <% if @curriculum.errors.any? %>
+    <div id="error_nuevo_curriculum">
+      <h2><%= pluralize(@usuario.errors.count, "error") %> Error en los campos:</h2>
+
+      <ul>
+      <% @curriculum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"RFC" %><br>
+    <%= f.text_field :rfc, placeholder :"RFC" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Fecha de nacimiento" %><br>
+    <%= f.date_field :fechaNacimiento, placeholder :"Fecha de nacimiento" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Area Especialización" %><br>
+    <%= f.text_field :areaEspecializacion, placeholder :"Especialización" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Formación ultimo grado" %><br>
+    <%= f.text_field :formacionUltimoGrado, placeholder :"Ultimo grado" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Curso de Actualización" %><br>
+    <%= f.text_area :formacionCursoActualizacion, placeholder :"Cursos Actualizacion" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Experiencia Docente" %><br>
+    <%= f.text_area :experienciaDocente, placeholder :"Experiencia" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Cargos Academicos" %><br>
+    <%= f.text_field :cargosAcademicos, placeholder :"Cargos Academicos" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Revisor Otros" %><br>
+    <%= f.text_field :revisorOtros, placeholder :"Revisor/Otros" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Publicaciones" %><br>
+    <%= f.text_field :publicaciones, placeholder :"Publicaciones" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Ponencias/Conferencias/Congresos" %><br>
+    <%= f.text_field :ponenciasConferenciasCongresos, placeholder :"Ponencias/Conferencias/Congresos" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Formacion Recursos Humanos" %><br>
+    <%= f.text_field :formacionRecursosHumanos, placeholder :"Formacion" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Curos Impartidos" %><br>
+    <%= f.text_field :cursosImpartidos, placeholder :"Cursos" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Experiencias Entidad Academica" %><br>
+    <%= f.text_field :experienciaEntidadAcademica, placeholder :"Experiencia" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Reconocimentos" %><br>
+    <%= f.text_field :reconocimentos, placeholder :"Reconocimientos" %>
+  </div>
+<% end %>
