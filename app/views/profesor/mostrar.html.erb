@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @profesor.nombre %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @profesor.correo %>
+</p>
+
+<%= link_to 'Crear/Editar Curriculum', curriculum_path(@profesor) %> |
+<%= link_to 'Crear/Editar Curso', curso_path(@profesor)%>

@@ -1,19 +1,35 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'principal/index'
 
-  get 'curriculum/index'
-
+  get '/' => 'profesor#index'
+  
+  get 'curriculum/' => 'curriculum#index'
   get 'curriculum/crear'
-  post'curriculum/crear' => "curriculum#crear"
-
-  post 'curriculum/borrar' => "curriculum#borrar"
-
+  post 'curriculum/crear' =>  'curriculum#crear'
+  post 'curriculum/borrar' =>  'curriculum#borrar'
   get 'curriculum/actualizar'
-  post 'curriculum/actualizar' => "curriculum#actualizar"
+  post 'curriculum/:id/actualizar' => 'curriculum#actualizar'
 
-  get 'curriculum/read'
+
+  get 'curso/' => 'curso#index'
+  get 'curso/crear'
+  post 'curso/crear' => 'curso#crear'
+  post  'curso/borrar' => 'curso#borrar'
+  get 'curso/actualizar'
+  post 'curso/:id/actualizar' => 'curso#actualizar'
+
+
+  get 'profesors/' => 'profesor#index'
+  post 'profesors/' => 'profesor#crear'
+  post 'profesors/:id' => 'profesor#actualizar'
+  get 'profesor/' => 'profesor#index'
+  get 'profesor/crear' => 'profesor#crear'
+  post 'profesor/crear' => 'profesor#crear'
+  get 'profesor/borrar' => 'profesor#borrar'
+  get 'profesor/actualizar'
+  post 'profesor/actualizar' => 'profesor#actualizar'
+  get 'profesor/mostrar' => 'profesor#mostrar'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

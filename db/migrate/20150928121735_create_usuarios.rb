@@ -5,12 +5,12 @@ class CreateUsuarios < ActiveRecord::Migration
       t.string :apellidoPaterno
       t.string :apellidoMaterno
       t.string :contrasena
-      t.string :email
+      t.string :correo
       t.string :direccion
       t.boolean :pago
 
       t.timestamps null: false
     end
-    add_index :usuarios, :email, unique: true
+    add_index :usuarios, :correo, unique: true
   end
 end

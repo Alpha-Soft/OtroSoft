@@ -1,0 +1,37 @@
+<%= form_for(@profesor) do |f| %>
+  <% if @profesor.errors.any? %>
+    <div id="error_nuevo_curso">
+      <h2><%= pluralize(@profesor.errors.count, "error") %> Error en los campos:</h2>
+
+      <ul>
+      <% @profesor.errors.full_messages.each do |mensaje| %>
+        <li><%= mensaje %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Nombre" %><br>
+    <%= f.text_field :nombre, placeholder: "Nombre" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Contraseña" %><br>
+    <%= f.password_field :contrasena, placeholder: "Contraseña" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Re-Contraseña" %><br>
+    <%= f.password_field :recontrasena, placeholder: "ReContraseña" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Correo" %><br>
+    <%= f.email_field :correo, placeholder: "Correo electronico" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Direccion" %><br>
+    <%= f.text_field :direccion, placeholder: "Direccion" %>
+  </div>
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

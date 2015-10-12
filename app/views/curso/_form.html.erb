@@ -1,0 +1,125 @@
+<%= form_for(@curso) do |f| %>
+  <% if @curso.errors.any? %>
+    <div id="error_nuevo_curso">
+      <h2><%= pluralize(@curso.errors.count, "error") %> Error en los campos:</h2>
+
+      <ul>
+      <% @curso.errors.full_messages.each do |mensaje| %>
+        <li><%= mensaje %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Tipo de actividad académica" %><br>
+    <%= f.text_field :tipo, placeholder: "Tipo de actividad académica:" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Modalidad" %><br>
+    <%= f.text_field :modalidad, placeholder: "Modalidad" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Fechas" %><br>
+    <%= f.text_area :fechas %>
+  </div>
+  <div class="field">
+    <%= f.label :"Dias Horarios" %><br>
+    <%= f.text_field :diasHorario %>
+  </div>
+  <div class="field">
+    <%= f.label :"Lugar" %><br>
+    <%= f.text_field :lugar, placeholder: "Lugar" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Numero sesiones" %><br>
+    <%= f.number_field :numeroSesiones %>
+  </div>
+  <div class="field">
+    <%= f.label :"Numero horas" %><br>
+    <%= f.number_field :numeroHoras %>
+  </div>
+  <div class="field">
+    <%= f.label :"Minimo de inscritos" %><br>
+    <%= f.number_field :minInscritos %>
+  </div>
+    <div class="field">
+    <%= f.label :"Maximo de inscritos" %><br>
+    <%= f.number_field :maxInscritos %>
+  </div>
+  <div class="field">
+    <%= f.label :"Costo publico general" %><br>
+    <%= f.number_field :costoPublicoGeneral %>
+  </div>
+  <div class="field">
+    <%= f.label :"Costo alumnos/tesitas/personal UNAM" %><br>
+    <%= f.number_field :costoUNAM %>
+  </div>
+  <div class="field">
+    <%= f.label :"Pago propuesto a docentes (bruto X hora)" %><br>
+    <%= f.number_field :pagoPropuestoDocentes, placeholder: "Pago" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Material de apoyo requerido durante las clases" %><br>
+    <%= f.text_area :materialApoyo %>
+  </div>
+  <div class="field">
+    <%= f.label :"Equipo de cómputo y software requerido (especificaciones mínimas del equipo y paquetería a utilizar)" %><br>
+    <%= f.text_area :equipoComputo %>
+  </div>
+  <div class="field">
+    <%= f.label :"Material requerido a los alumnos (material que deberá ser llevado por los asistentes por ejemplo memoria flash USB)" %><br>
+    <%= f.text_area :materialRequeridoAlumnos %>
+  </div>
+  <div class="field">
+    <%= f.label :"Material de apoyo para los alumnos (carpetas, documentos, discos compactos, etc.)" %><br>
+    <%= f.text_area :materialApoyoAlumnos %>
+  </div>
+  <div class="field">
+    <%= f.label :"Descripcion del curso" %><br>
+    <%= f.text_area :descripcionCurso%>
+  </div>
+    <div class="field">
+    <%= f.label :"Objetivo general" %><br>
+    <%= f.text_area :objetivoGeneral%>
+  </div>
+  <div class="field">
+    <%= f.label :"Objetivos especificos" %><br>
+    <%= f.text_area :objetivosEspecificos%>
+  </div>
+  <div class="field">
+    <%= f.label :"Metas" %><br>
+    <%= f.text_area :metas%>
+  </div>
+  <div class="field">
+    <%= f.label :"Dirigido a" %><br>
+    <%= f.text_area :dirigidoA%>
+  </div>
+  <div class="field">
+    <%= f.label :"Campo de conocimiento" %><br>
+    <%= f.text_area :campoConocimiento%>
+  </div>
+  <div class="field">
+    <%= f.label :"Procesos de evaluación" %><br>
+    <%= f.text_area :procesoEvaluacion%>
+  </div>
+  <div class="field">
+    <%= f.label :"Requsitos de ingreso" %><br>
+    <%= f.text_area :requisitosIngreso%>
+  </div>
+  <div class="field">
+    <%= f.label :"Requisitos permanencia" %><br>
+    <%= f.text_area :requisitosPermanencia%>
+  </div>
+  <div class="field">
+    <%= f.label :"Requisitos egreso" %><br>
+    <%= f.text_area :requisitosEgreso%>
+  </div>
+  <div class="field">
+    <%= f.label :"Bibliografia" %><br>
+    <%= f.text_area :bibliografia%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

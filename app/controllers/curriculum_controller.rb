@@ -9,9 +9,9 @@ class CurriculumController < ApplicationController
     #"Contraseña" el cual esta como requerido en el modelo.
         @curriculum = Curriculum.new curriculum_params
         if request.post?
-            if @user.valid?
-                @user.save!
-                redirect_to crud_user_index_path
+            if @curriculum.valid?
+                @curriculum.save!
+                redirect_to curriculum_index_path
             end
         end
     end
@@ -61,11 +61,14 @@ class CurriculumController < ApplicationController
  
 
     private
+    def profesor_params
+        params.permit(:id)
+    end
     def curriculum_params
         params.require(:curriculum).permit(:rfc, :fechaNacimiento, :areaEspecializacion, :formacionUltimoGrado, :formacionCursoActualizacion, :experienciaDocente, :cargosAcademicos, :revisorOtros, :publicaciones, :ponenciasConferenciasCongresos, :formacionRecursosHumanos, :cursosImpartidos, :experienciaEntidadAcademica, :experienciaAreaCurso, :reconocimientos) if params[:curriculum]
     end
 
-    def edit_user
+    def actualizar_curriculum
         params.permit(:id)
     end
     def eliminar_curriculum

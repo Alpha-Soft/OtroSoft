@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profesores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Contrasena</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profesores.each do |profesor| %>
+      <tr>
+        <td><%= profesor.nombre %></td>
+        <td><%= profesor.contrasena %></td>
+        <td><%= profesor.correo %></td>
+        <td><%= link_to 'mostrar', {:action => 'mostrar',  :controller => 'profesor', :id => profesor.id} %></td>
+        <td><%= link_to 'actualizar',  {:action => 'actualizar',  :controller => 'profesor', :id => profesor.id} %></td>
+        <td><%= link_to 'borrar', {:action => 'borrar',  :controller => 'profesor', :id => profesor.id}, confirm: 'Quieres eliminarlo?' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Profesor', profesor_crear_path %>

@@ -7,8 +7,9 @@ class CreateCursos < ActiveRecord::Migration
       t.boolean :aprovado
       t.string :tipo
       t.string :modalidad
-      t.string :fechas
-      t.string :diasHorario
+      t.text :fechas
+      t.text :diasHorario
+      t.string :lugar
       t.integer :numeroSesiones
       t.integer :numeroHoras
       t.integer :minInscritos
@@ -21,9 +22,10 @@ class CreateCursos < ActiveRecord::Migration
       t.text :materialRequeridoAlumnos
       t.text :materialApoyoAlumnos
       t.text :descripcionCurso
-      t.text :objetivosGeneral
-      t.text :objetivosEspecifico
+      t.text :objetivoGeneral
+      t.text :objetivosEspecificos
       t.text :metas
+      t.text :campoConocimiento
       t.text :dirigidoA
       t.text :procesoEvaluacion
       t.text :requisitosIngreso

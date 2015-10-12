@@ -92,8 +92,9 @@ ActiveRecord::Schema.define(version: 20151007190302) do
     t.boolean  "aprovado"
     t.string   "tipo"
     t.string   "modalidad"
-    t.string   "fechas"
-    t.string   "diasHorario"
+    t.text     "fechas"
+    t.text     "diasHorario"
+    t.string   "lugar"
     t.integer  "numeroSesiones"
     t.integer  "numeroHoras"
     t.integer  "minInscritos"
@@ -106,9 +107,10 @@ ActiveRecord::Schema.define(version: 20151007190302) do
     t.text     "materialRequeridoAlumnos"
     t.text     "materialApoyoAlumnos"
     t.text     "descripcionCurso"
-    t.text     "objetivosGeneral"
-    t.text     "objetivosEspecifico"
+    t.text     "objetivoGeneral"
+    t.text     "objetivosEspecificos"
     t.text     "metas"
+    t.text     "campoConocimiento"
     t.text     "dirigidoA"
     t.text     "procesoEvaluacion"
     t.text     "requisitosIngreso"
@@ -192,14 +194,14 @@ ActiveRecord::Schema.define(version: 20151007190302) do
     t.string   "apellidoPaterno"
     t.string   "apellidoMaterno"
     t.string   "contrasena"
-    t.string   "email"
+    t.string   "correo"
     t.string   "direccion"
     t.boolean  "pago"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+  add_index "usuarios", ["correo"], name: "index_usuarios_on_correo", unique: true, using: :btree
 
   add_foreign_key "cursandos", "cursos"
   add_foreign_key "docentes", "cursos"
