@@ -1,7 +1,7 @@
 class CreateCurriculums < ActiveRecord::Migration
   def change
     create_table :curriculums do |t|
-      t.belongs_to :profesor, polymorphic: true,  index: true
+      t.belongs_to :ponente, polymorphic: true,  index: true
       t.date :fechaNacimiento
       t.string :rfc
       t.text :areaEspecializacion

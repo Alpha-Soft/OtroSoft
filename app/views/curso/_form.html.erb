@@ -1,4 +1,4 @@
-<%= form_for(@curso) do |f| %>
+<%= form_for @curso, url:{controller: "curso", action: @action}, :method => :POST  do |f| %>
   <% if @curso.errors.any? %>
     <div id="error_nuevo_curso">
       <h2><%= pluralize(@curso.errors.count, "error") %> Error en los campos:</h2>
@@ -32,28 +32,28 @@
     <%= f.text_field :lugar, placeholder: "Lugar" %>
   </div>
   <div class="field">
-    <%= f.label :"Numero sesiones" %><br>
-    <%= f.number_field :numeroSesiones %>
+    <%= f.label :"Número sesiones" %><br>
+    <%= f.number_field :numeroSesiones, placeholder: "Número de sesiones"%>
   </div>
   <div class="field">
-    <%= f.label :"Numero horas" %><br>
-    <%= f.number_field :numeroHoras %>
+    <%= f.label :"Número horas" %><br>
+    <%= f.number_field :numeroHoras, placeholder: "Número de horas"%>
   </div>
   <div class="field">
     <%= f.label :"Minimo de inscritos" %><br>
-    <%= f.number_field :minInscritos %>
+    <%= f.number_field :minInscritos,  placeholder: "Minimo de inscritos"%>
   </div>
     <div class="field">
     <%= f.label :"Maximo de inscritos" %><br>
-    <%= f.number_field :maxInscritos %>
+    <%= f.number_field :maxInscritos,  placeholder: "Maximo de inscritos"%>
   </div>
   <div class="field">
     <%= f.label :"Costo publico general" %><br>
-    <%= f.number_field :costoPublicoGeneral %>
+    <%= f.number_field :costoPublicoGeneral, placeholder: "Costo publico general"%>
   </div>
   <div class="field">
     <%= f.label :"Costo alumnos/tesitas/personal UNAM" %><br>
-    <%= f.number_field :costoUNAM %>
+    <%= f.number_field :costoUNAM,  placeholder: "Costo UNAM"%>
   </div>
   <div class="field">
     <%= f.label :"Pago propuesto a docentes (bruto X hora)" %><br>

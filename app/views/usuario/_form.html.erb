@@ -1,16 +1,17 @@
-<%= form_for(@profesor) do |f| %>
-  <% if @profesor.errors.any? %>
+<%= form_for @usuario, url:{controller: "usuario", action: @action, id: @usuario.id}, :method => :POST do |f| %>
+  <% if @usuario.errors.any? %>
     <div id="error_nuevo_curso">
-      <h2><%= pluralize(@profesor.errors.count, "error") %> Error en los campos:</h2>
+      <h2><%= pluralize(@usuario.errors.count, "error") %></h2>
 
       <ul>
-      <% @profesor.errors.full_messages.each do |mensaje| %>
+      <% @usuario.errors.full_messages.each do |mensaje| %>
         <li><%= mensaje %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
+  <%= hidden_field_tag(:tipo, @tipo) %>
+  <%= hidden_field_tag(:usuario, @tipo) %>
   <div class="field">
     <%= f.label :"Nombre" %><br>
     <%= f.text_field :nombre, placeholder: "Nombre" %>

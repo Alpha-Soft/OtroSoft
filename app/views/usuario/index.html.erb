@@ -20,7 +20,7 @@
         <td><%= profesor.correo %></td>
         <td><%= link_to 'mostrar', {:action => 'mostrar',  :controller => 'profesor', :id => profesor.id} %></td>
         <td><%= link_to 'actualizar',  {:action => 'actualizar',  :controller => 'profesor', :id => profesor.id} %></td>
-        <td><%= link_to 'borrar', {:action => 'borrar',  :controller => 'profesor', :id => profesor.id}, confirm: 'Quieres eliminarlo?' %></td>
+        <td><%= link_to 'borrar', {:action => 'borrar',  :controller => 'profesor', :id => profesor.id} %></td>
       </tr>
     <% end %>
   </tbody>

@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20151007190302) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "curriculums", force: :cascade do |t|
-    t.integer  "profesor_id"
-    t.string   "profesor_type"
+    t.integer  "ponente_id"
+    t.string   "ponente_type"
     t.date     "fechaNacimiento"
     t.string   "rfc"
     t.text     "areaEspecializacion"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20151007190302) do
     t.datetime "updated_at",                     null: false
   end
 
-  add_index "curriculums", ["profesor_type", "profesor_id"], name: "index_curriculums_on_profesor_type_and_profesor_id", using: :btree
+  add_index "curriculums", ["ponente_type", "ponente_id"], name: "index_curriculums_on_ponente_type_and_ponente_id", using: :btree
 
   create_table "cursandos", force: :cascade do |t|
     t.integer  "curso_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 20151007190302) do
   add_index "cursandos", ["curso_id"], name: "index_cursandos_on_curso_id", using: :btree
 
   create_table "cursos", force: :cascade do |t|
-    t.integer  "profesor_id"
-    t.string   "profesor_type"
+    t.integer  "ponente_id"
+    t.string   "ponente_type"
     t.date     "inicia"
     t.date     "finaliza"
     t.boolean  "aprovado"
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20151007190302) do
     t.datetime "updated_at",               null: false
   end
 
-  add_index "cursos", ["profesor_type", "profesor_id"], name: "index_cursos_on_profesor_type_and_profesor_id", using: :btree
+  add_index "cursos", ["ponente_type", "ponente_id"], name: "index_cursos_on_ponente_type_and_ponente_id", using: :btree
 
   create_table "docentes", force: :cascade do |t|
     t.integer  "curso_id"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 20151007190302) do
   add_index "temarios", ["curso_id"], name: "index_temarios_on_curso_id", using: :btree
 
   create_table "usuarios", force: :cascade do |t|
+    t.string   "type"
     t.string   "nombre"
     t.string   "apellidoPaterno"
     t.string   "apellidoMaterno"

@@ -1,7 +1,7 @@
 class CreateCursos < ActiveRecord::Migration
   def change
     create_table :cursos do |t|
-      t.belongs_to :profesor, index: true, polymorphic: true
+      t.belongs_to :ponente, index: true, polymorphic: true
       t.date :inicia
       t.date :finaliza
       t.boolean :aprovado

@@ -1,0 +1,18 @@
+<%= form_for @usuario,  url:{controller: "usuario", action: 'iniciarSesion'}, :method => :POST do |f| %>
+<div class="field">
+  <div class="field">
+    <%= f.label :"Correo" %><br>
+    <%= f.text_field :correo, placeholder: "Correo" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Contraseña" %><br>
+    <%= f.password_field :contrasena, placeholder: "Contraseña" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "enviar"%>
+  </div>
+  <br>
+   <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+<% end %>

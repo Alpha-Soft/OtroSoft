@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ponentes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Contrasena</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ponentes.each do |ponente| %>
+      <tr>
+        <td><%= ponente.nombre %></td>
+        <td><%= ponente.contrasena %></td>
+        <td><%= ponente.correo %></td>
+        <td><%= link_to 'mostrar', {:action => 'mostrar',  :controller => 'ponente', :id => ponente.id} %></td>
+        <td><%= link_to 'actualizar',  {:action => 'actualizar',  :controller => 'usuario', :id => ponente.id, :tipo => 'ponente'} %></td>
+        <td><%= link_to 'borrar', {:action => 'borrar',  :controller => 'usuario', :id => ponente.id} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Profesor', {:action => 'registrar', :controller => 'usuario', :tipo => 'ponente'} %>

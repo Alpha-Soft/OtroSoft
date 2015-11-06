@@ -1,5 +1,5 @@
 class Curso < ActiveRecord::Base
-  belongs_to :profesor
+  belongs_to :ponente
   has_many :temario
   has_many :docente
   has_many :sesion

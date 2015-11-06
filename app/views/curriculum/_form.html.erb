@@ -1,7 +1,7 @@
-<%= form_for @curriculum do |f| %>
+<%= form_for @curriculum, url:{controller: "curriculum", action: @action}, :method => :POST  do |f| %>
   <% if @curriculum.errors.any? %>
     <div id="error_nuevo_curriculum">
-      <h2><%= pluralize(@usuario.errors.count, "error") %> Error en los campos:</h2>
+      <h2><%= pluralize(@curriculum.errors.count, "error") %> Error en los campos:</h2>
 
       <ul>
       <% @curriculum.errors.full_messages.each do |message| %>
@@ -62,6 +62,10 @@
   <div class="field">
     <%= f.label :"Experiencias Entidad Academica" %><br>
     <%= f.text_field :experienciaEntidadAcademica, placeholder: "Experiencia" %>
+  </div>
+  <div class="field">
+    <%= f.label :"Experiencias en el arear(Curos)" %><br>
+    <%= f.text_field :experienciaAreaCurso, placeholder: "Experiencia Area" %>
   </div>
   <div class="field">
     <%= f.label :"Reconocimentos" %><br>

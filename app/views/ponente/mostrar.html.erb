@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @ponente.nombre %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @ponente.correo %>
+</p>
+
+<%= link_to 'Curriculum nuevo', {:action => 'crear', :controller => 'curriculum'} %>
+<br>
+<%= link_to 'Curriculum actualizar', {:action => 'actualizar', :controller => 'curriculum'} %>
+<br>
+<%= link_to 'Curso nuevo', {:action => 'crear', :controller => 'curso'} %>
+<br>
+<%= link_to 'Curso actualizar', {:action => 'actualizar', :controller => 'curso'} %>
