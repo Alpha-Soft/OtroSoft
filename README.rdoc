@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Materia: Temas Selectos de Ingeniería de Software A, Optativa
+Semestre: 2016-1 
+Clave: Grupo 7121
 
-Things you may want to cover:
+Profesor        María Guadalupe Elena Ibargüengoitia González
+Ayudante        Carlos Augusto Escalona Navarro
+Ayud. Lab.      Claudia Ivette Ramírez García
 
-* Ruby version
+Programa implementado en Ruby on Rails, diseñado según los requerimientos que fuero dados
+para el cliente "SEAyC", con el fin de ayudar al manejo de cursos impartidos por la secretaria
+ya mencionada.
 
-* System dependencies
+Nombre de la Empresa: Alpha Soft
+Nombre del programa: OtroSoft
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Alumnos:
+Medina Peña Raúl
+Romero Rivera Carlos Alberto
+Gutiérrez Valdez Mijail
